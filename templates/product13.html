@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless Charging Pad - TechTrend Hub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Retained styles for consistent layout and branding */
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+        }
+
+        .custom-navbar {
+            background: linear-gradient(135deg, #bdd0f3, #3e2a98);
+        }
+
+        .container {
+            padding: 40px 5%;
+            width: 100%;
+            min-height: 100vh;
+            background: transparent;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product img {
+            width: 450px;
+            border-radius: 10px;
+            object-fit: cover;
+            height: 450px;
+        }
+
+        .details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .price {
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .buy-button,
+        .buy-btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .buy-button {
+            background: #b093fa;
+        }
+
+        .buy-button:hover {
+            background: #7c5bf2;
+        }
+
+        .buy-btn {
+            background: #ffcc00;
+            transition: transform 0.3s;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #3e2a98;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #0056d8;
+        }
+
+        .product-item {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            height: 150px;
+        }
+
+        .related-products .product-list {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            justify-content: flex-start;
+            align-items: stretch;
+            padding-bottom: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .other-products .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            overflow-x: hidden;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #3e2a98, #bdd0f3);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="{% url 'home' %}" style="color: #3e2a98; font-weight: bold;">TechTrend Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'shop' %}">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'cart' %}">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Section -->
+    <div class="container">
+        <a href="{% url 'shop' %}" class="back-button">&#8592; Back</a>
+        <div class="product">
+            <img src="{% static 'images/download (7).jpeg' %}" alt="Wireless Charging Pad">
+            <div class="details">
+                <h1>Wireless Charging Pad</h1>
+                <p style="font-size: 20px; width: 500px; font-family: sans-serif;">
+                    Power up your devices effortlessly with our sleek Wireless Charging Pad. Compatible with all Qi-enabled smartphones
+                    and accessories, it delivers fast, safe, and efficient charging—just drop and go. Minimalist design fits any workspace or bedside.
+                </p>
+                <p class="price">$39.99 <span style="text-decoration: line-through; color: rgb(72, 69, 69); font-size: 24px;">$59.99</span></p>
+                <a href="{% url 'cart' %}" class="buy-button">Add to Cart</a><br>
+                <a href="{% url 'shop' %}" class="buy-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="related-products mt-5">
+            <h2 class="text-center mb-4">Related Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="{% static 'images/smartphone.jpeg.jpg' %}?v=2" alt="Camera Mount">
+                    <p>Smartphone</p>
+                    <p class="price">$89.99</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="{% static 'images/download (17).jpeg' %}?v=2" alt="Wireless Earbuds">
+                    <p>Wireless Earbuds</p>
+                    <p class="price">$59.99</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="{% static 'images/download (11).jpeg' %}?v=2" alt="headphones">
+                    <p>Noise Cancelling Headphones</p>
+                    <p class="price">$99.99</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="{% static 'images/ipad.jpeg.jpg' %}" alt="tablet">
+                    <p>Smart Tab</p>
+                    <p class="price">$90.00</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="{% static 'images/download (1).jpeg' %}" alt="AI keyboard">
+                    <p>AI Powered Keyboard</p>
+                    <p class="price">$29.99</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="other-products">
+            <h2>Other Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="{% static 'images/download (5).jpeg' %}" alt="VR Headset">
+                    <p>VR Headset</p>
+                    <p class="price">$299.99</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="{% static 'images/macbookpro.jpeg.jpg' %}?v=2" alt="Laptop">
+                    <p>Laptop</p>
+                    <p class="price">$100.00</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="{% static 'images/download (10).jpeg' %}" alt="Smart Lock">
+                    <p>Smart Lock</p>
+                    <p class="price">$349.99</p>
+                    <a href="#" class="buy-button">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="mb-0">&copy; 2025 TechTrend Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
