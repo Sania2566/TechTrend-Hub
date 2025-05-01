@@ -116,24 +116,12 @@
 
         .product-list {
             display: flex;
-            flex-wrap: nowrap;
-            /* Prevent wrapping to next line */
-            overflow-x: auto;
-            /* Enable horizontal scroll */
+            flex-wrap: wrap;
             gap: 20px;
-            padding-bottom: 10px;
+            justify-content: center;
+            align-items: stretch;
+            /* ensures all items stretch to the same height in a row */
         }
-
-        .product-list::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .product-list::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 4px;
-        }
-
-
 
         .product-item {
             text-align: center;
@@ -185,8 +173,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="{% url 'shop' %}">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{% url 'cart' %}">🛒 Cart (<span
-                                id="cart-count">0</span>)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'cart' %}">🛒 Cart (<span id="cart-count">0</span>)</a></li>
                     <li class="nav-item"><a class="nav-link active" href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </div>
@@ -197,67 +184,63 @@
     <div class="container">
         <a href="{% url 'shop' %}" class="back-button">&#8592; Back</a>
         <div class="product">
-            <img src="{% static 'images/sw.jpeg' %}?v=2" alt="Smartwatch">
+            <img src="{% static 'images/download (9).jpeg' %}?v=2" alt="Smart Lock">
             <div class="details">
-                <h1>AI Smart Watch</h1>
-                <p style="font-size: 20px; width: 500px; font-family: sans-serif;">AMOLED Display, 2 Straps, Make/Answer
-                    Calls, IP68 Waterproof, Fitness Tracking, 100+ Sport Modes, Pedometer, Android & iOS Compatible.</p>
-                <p class="price">$39.99 <span
-                        style="text-decoration: line-through; color: rgb(72, 69, 69); font-size: 24px;">$99.99</span>
+                <h1>Portable Projector</h1>
+                <p style="font-size: 20px; width: 500px; font-family: sans-serif;">Compact Design, Full HD 1080p Resolution, Built-in Speaker, Wireless Screen Mirroring, HDMI/USB Support, Up to 120” Display, Rechargeable Battery, Tripod Mount, Ideal for Movies & Presentations.
                 </p>
-                <a href="javascript:void(0);" class="buy-button" onclick="addToCart('AI Smart Watch', 39.99)">Add to
-                    Cart</a>
+                <p class="price">$349.99 <span
+                        style="text-decoration: line-through; color: rgb(72, 69, 69); font-size: 24px;">$599.99</span>
+                </p>
+                <a href="javascript:void(0);" class="buy-button" onclick="addToCart('Portable Projector', 349.99)">Add to Cart</a>
                 <br>
                 <a href="{% url 'buy' %}" class="buy-btn">Buy Now</a>
             </div>
         </div>
-
         <div class="related-products mt-5">
             <h2 class="text-center mb-4">Related Products</h2>
             <div class="product-list">
                 <div class="product-item">
-                    <img src="{% static 'images/download (12).jpeg' %}?v=3" alt="Smart Band">
-                    <p>Fitness Smart Band</p>
-                    <p class="price">$19.99</p>
-                    <a href="{% url 'product18' %}" class="buy-button">View</a>
+                    <img src="{% static 'images/download (18).jpeg' %}?v=2" alt="Bluetooth Speaker">
+                    <p>AI Home Assistant</p>
+                    <p class="price">$149.99</p>
+                    <a href="{% url 'product12' %}" class="buy-button">View</a>
                 </div>
                 <div class="product-item">
-                    <img src="{% static 'images/download (17).jpeg' %}?v=2" alt="Wireless Earbuds">
-                    <p>Wireless Earbuds</p>
-                    <p class="price">$29.99</p>
-                    <a href="{% url 'product2' %}" class="buy-button">View</a>
-                </div>
-                <div class="product-item">
-                    <img src="{% static 'images/download (7).jpeg' %}?v=2" alt="Watch Stand">
-                    <p>Smartwatch Charging Stand</p>
-                    <p class="price">$39.99</p>
-                    <a href="{% url 'product13' %}" class="buy-button">View</a>
-                </div>
-                <div class="product-item">
-                    <img src="{% static 'images/Smartphone.jpeg' %}" alt="Smart phone">
+                    <img src="{% static 'images/Smartphone.jpeg' %}" alt="Smartphone">
                     <p>Smartphone</p>
                     <p class="price">$89.99</p>
                     <a href="{% url 'product6' %}" class="buy-button">View</a>
                 </div>
                 <div class="product-item">
-                    <img src="{% static 'images/ipad.jpeg' %}" alt="tablet">
-                    <p>Smart Tab</p>
-                    <p class="price">$90.00</p>
-                    <a href="{% url 'product8' %}" class="buy-button">View</a>
+                    <img src="{% static 'images/download (3).jpeg' %}?v=2" alt="Bluetooth Speaker">
+                    <p>Bluetooth Speaker</p>
+                    <p class="price">$39.99</p>
+                    <a href="{% url 'product9' %}" class="buy-button">View</a>
                 </div>
-
+                <div class="product-item">
+                    <img src="{% static 'images/download (8).jpeg' %}" alt="Smart Glasses">
+                    <p>Smart Glasses</p>
+                    <p class="price">$49.99</p>
+                    <a href="{% url 'product14' %}" class="buy-button">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="{% static 'images/download (4).jpeg' %}" alt="Smart Ring">
+                    <p>Smart Ring</p>
+                    <p class="price">$29.99</p>
+                    <a href="{% url 'product10' %}" class="buy-button">View</a>
+                </div>
             </div>
         </div>
-
 
         <div class="other-products">
             <h2>Other Products</h2>
             <div class="product-list">
                 <div class="product-item">
-                    <img src="{% static 'images/download (2).jpeg' %}?v=2" alt="Notebook">
-                    <p>Smart Notebook</p>
-                    <p class="price">$14.99</p>
-                    <a href="{% url 'product5' %}" class="buy-button">View</a>
+                    <img src="{% static 'images/download (1).jpeg' %}?v=2" alt="Notebook">
+                    <p>AI-Powered Keyboard</p>
+                    <p class="price">$29.99</p>
+                    <a href="{% url 'product4' %}" class="buy-button">View</a>
                 </div>
                 <div class="product-item">
                     <img src="{% static 'images/download (16).jpeg' %}?v=2" alt="Coffee Maker">
@@ -283,31 +266,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function updateCartCount() {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            let totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById("cart-count").textContent = totalCount;
-        }
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById("cart-count").textContent = totalCount;
+    }
 
         function addToCart(productName, price) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-            let existingItem = cart.find(item => item.name === productName);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ name: productName, price: parseFloat(price), quantity: 1 });
-            }
-
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCartCount();
-            alert(productName + " added to cart!");
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        let existingItem = cart.find(item => item.name === productName);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ name: productName, price: parseFloat(price), quantity: 1 });
         }
 
-        // Initialize cart count on page load
+        localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
+        alert(productName + " added to cart!");
+    }
+
+    // Initialize cart count on page load
+    updateCartCount();
 
     </script>
-
+    
 </body>
 
 </html>
